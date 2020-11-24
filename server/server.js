@@ -8,8 +8,9 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3004;
+const mongo = process.env.MONGO || 'mongodb+srv://admin:adminuser@cluster0.dj07e.mongodb.net/<dbname>?retryWrites=true&w=majority';
 
-Mongo.connect(process.env.MONGO);
+Mongo.connect(mongo);
 
 app.use(cors());
 app.use(bodyParser.json());
